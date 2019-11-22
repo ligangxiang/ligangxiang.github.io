@@ -6,18 +6,21 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2019 17:01:43 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2019 18:04:33 +0800</lastBuildDate>
     
 	<atom:link href="https:ligangxiang.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Blog</title>
+      <title>第一篇</title>
       <link>https:ligangxiang.github.io/post/blog/</link>
-      <pubDate>Fri, 22 Nov 2019 17:01:43 +0800</pubDate>
+      <pubDate>Fri, 22 Nov 2019 18:04:33 +0800</pubDate>
       
       <guid>https:ligangxiang.github.io/post/blog/</guid>
-      <description></description>
+      <description>第一篇博客 啥都没有,只有这个
+Apache Flink Apache Flink is an open source stream processing framework with powerful stream- and batch-processing capabilities.
+Learn more about Flink at https://flink.apache.org/
+Features  A streaming-first runtime that supports both batch processing and data streaming programs Elegant and fluent APIs in Java and Scala A runtime that supports very high throughput and low event latency at the same time Support for event time and out-of-order processing in the DataStream API, based on the Dataflow Model Flexible windowing (time, count, sessions, custom triggers) across different time semantics (event time, processing time) Fault-tolerance with exactly-once processing guarantees Natural back-pressure in streaming programs Libraries for Graph processing (batch), Machine Learning (batch), and Complex Event Processing (streaming) Built-in support for iterative programs (BSP) in the DataSet (batch) API Custom memory management for efficient and robust switching between in-memory and out-of-core data processing algorithms Compatibility layers for Apache Hadoop MapReduce Integration with YARN, HDFS, HBase, and other components of the Apache Hadoop ecosystem  Streaming Example case class WordWithCount(word: String, count: Long) val text = env.</description>
     </item>
     
   </channel>

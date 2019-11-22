@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en-us">
   <head>
-    <title>Blog // My New Hugo Site</title>
+    <title>第一篇 // My New Hugo Site</title>
     <meta charset="utf-8" />
     <meta name="generator" content="Hugo 0.59.1" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -11,15 +11,21 @@
 
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Blog"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="第一篇"/>
+<meta name="twitter:description" content="第一篇博客 啥都没有,只有这个
+Apache Flink Apache Flink is an open source stream processing framework with powerful stream- and batch-processing capabilities.
+Learn more about Flink at https://flink.apache.org/
+Features  A streaming-first runtime that supports both batch processing and data streaming programs Elegant and fluent APIs in Java and Scala A runtime that supports very high throughput and low event latency at the same time Support for event time and out-of-order processing in the DataStream API, based on the Dataflow Model Flexible windowing (time, count, sessions, custom triggers) across different time semantics (event time, processing time) Fault-tolerance with exactly-once processing guarantees Natural back-pressure in streaming programs Libraries for Graph processing (batch), Machine Learning (batch), and Complex Event Processing (streaming) Built-in support for iterative programs (BSP) in the DataSet (batch) API Custom memory management for efficient and robust switching between in-memory and out-of-core data processing algorithms Compatibility layers for Apache Hadoop MapReduce Integration with YARN, HDFS, HBase, and other components of the Apache Hadoop ecosystem  Streaming Example case class WordWithCount(word: String, count: Long) val text = env."/>
 
-    <meta property="og:title" content="Blog" />
-<meta property="og:description" content="" />
+    <meta property="og:title" content="第一篇" />
+<meta property="og:description" content="第一篇博客 啥都没有,只有这个
+Apache Flink Apache Flink is an open source stream processing framework with powerful stream- and batch-processing capabilities.
+Learn more about Flink at https://flink.apache.org/
+Features  A streaming-first runtime that supports both batch processing and data streaming programs Elegant and fluent APIs in Java and Scala A runtime that supports very high throughput and low event latency at the same time Support for event time and out-of-order processing in the DataStream API, based on the Dataflow Model Flexible windowing (time, count, sessions, custom triggers) across different time semantics (event time, processing time) Fault-tolerance with exactly-once processing guarantees Natural back-pressure in streaming programs Libraries for Graph processing (batch), Machine Learning (batch), and Complex Event Processing (streaming) Built-in support for iterative programs (BSP) in the DataSet (batch) API Custom memory management for efficient and robust switching between in-memory and out-of-core data processing algorithms Compatibility layers for Apache Hadoop MapReduce Integration with YARN, HDFS, HBase, and other components of the Apache Hadoop ecosystem  Streaming Example case class WordWithCount(word: String, count: Long) val text = env." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https:ligangxiang.github.io/post/blog/" />
-<meta property="article:published_time" content="2019-11-22T17:01:43+08:00" />
-<meta property="article:modified_time" content="2019-11-22T17:01:43+08:00" />
+<meta property="article:published_time" content="2019-11-22T18:04:33+08:00" />
+<meta property="article:modified_time" content="2019-11-22T18:04:33+08:00" />
 
 
   </head>
@@ -36,7 +42,7 @@
       
   <article class="post">
     <header class="post-header">
-      <h1 class ="post-title">Blog</h1>
+      <h1 class ="post-title">第一篇</h1>
       <div class="post-meta">
         <div>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
@@ -50,11 +56,139 @@
   <title>clock</title>
   <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
 </svg>
-          0 min read
+          3 min read
         </div></div>
     </header>
     <div class="post-content">
       
+
+<h2 id="第一篇博客">第一篇博客</h2>
+
+<p>啥都没有,只有这个</p>
+
+<p><img src="C:UsersAdministratorDesktop22cf42e96bf10d6d0179122578ad7420.jpg" alt="22cf42e96bf10d6d0179122578ad7420" /></p>
+
+<h1 id="apache-flink">Apache Flink</h1>
+
+<p>Apache Flink is an open source stream processing framework with powerful stream- and batch-processing capabilities.</p>
+
+<p>Learn more about Flink at <a href="https://flink.apache.org/">https://flink.apache.org/</a></p>
+
+<h3 id="features">Features</h3>
+
+<ul>
+<li>A streaming-first runtime that supports both batch processing and data streaming programs</li>
+<li>Elegant and fluent APIs in Java and Scala</li>
+<li>A runtime that supports very high throughput and low event latency at the same time</li>
+<li>Support for <em>event time</em> and <em>out-of-order</em> processing in the DataStream API, based on the <em>Dataflow Model</em></li>
+<li>Flexible windowing (time, count, sessions, custom triggers) across different time semantics (event time, processing time)</li>
+<li>Fault-tolerance with <em>exactly-once</em> processing guarantees</li>
+<li>Natural back-pressure in streaming programs</li>
+<li>Libraries for Graph processing (batch), Machine Learning (batch), and Complex Event Processing (streaming)</li>
+<li>Built-in support for iterative programs (BSP) in the DataSet (batch) API</li>
+<li>Custom memory management for efficient and robust switching between in-memory and out-of-core data processing algorithms</li>
+<li>Compatibility layers for Apache Hadoop MapReduce</li>
+<li>Integration with YARN, HDFS, HBase, and other components of the Apache Hadoop ecosystem</li>
+</ul>
+
+<h3 id="streaming-example">Streaming Example</h3>
+
+<pre><code>case class WordWithCount(word: String, count: Long)
+
+val text = env.socketTextStream(host, port, '\n')
+
+val windowCounts = text.flatMap { w =&gt; w.split(&quot;\\s&quot;) }
+  .map { w =&gt; WordWithCount(w, 1) }
+  .keyBy(&quot;word&quot;)
+  .timeWindow(Time.seconds(5))
+  .sum(&quot;count&quot;)
+
+windowCounts.print()
+</code></pre>
+
+<h3 id="batch-example">Batch Example</h3>
+
+<pre><code>case class WordWithCount(word: String, count: Long)
+
+val text = env.readTextFile(path)
+
+val counts = text.flatMap { w =&gt; w.split(&quot;\\s&quot;) }
+  .map { w =&gt; WordWithCount(w, 1) }
+  .groupBy(&quot;word&quot;)
+  .sum(&quot;count&quot;)
+
+counts.writeAsCsv(outputPath)
+</code></pre>
+
+<h2 id="building-apache-flink-from-source">Building Apache Flink from Source</h2>
+
+<p>Prerequisites for building Flink:</p>
+
+<ul>
+<li>Unix-like environment (we use Linux, Mac OS X, Cygwin, WSL)</li>
+<li>Git</li>
+<li>Maven (we recommend version 3.2.5 and require at least 3.1.1)</li>
+
+<li><p>Java 8 or 11 (Java 9 or 10 may work)</p>
+
+<pre><code>git clone https://github.com/apache/flink.git
+cd flink
+mvn clean package -DskipTests # this will take up to 10 minutes
+</code></pre></li>
+</ul>
+
+<p>Flink is now installed in <code>build-target</code>.</p>
+
+<p><em>NOTE: Maven 3.3.x can build Flink, but will not properly shade away certain dependencies. Maven 3.1.1 creates the libraries properly. To build unit tests with Java 8, use Java 8u51 or above to prevent failures in unit tests that use the PowerMock runner.</em></p>
+
+<h2 id="developing-flink">Developing Flink</h2>
+
+<p>The Flink committers use IntelliJ IDEA to develop the Flink codebase. We recommend IntelliJ IDEA for developing projects that involve Scala code.</p>
+
+<p>Minimal requirements for an IDE are:</p>
+
+<ul>
+<li>Support for Java and Scala (also mixed projects)</li>
+<li>Support for Maven with Java and Scala</li>
+</ul>
+
+<h3 id="intellij-idea">IntelliJ IDEA</h3>
+
+<p>The IntelliJ IDE supports Maven out of the box and offers a plugin for Scala development.</p>
+
+<ul>
+<li>IntelliJ download: <a href="https://www.jetbrains.com/idea/">https://www.jetbrains.com/idea/</a></li>
+<li>IntelliJ Scala Plugin: <a href="https://plugins.jetbrains.com/plugin/?id=1347">https://plugins.jetbrains.com/plugin/?id=1347</a></li>
+</ul>
+
+<p>Check out our <a href="https://ci.apache.org/projects/flink/flink-docs-master/flinkDev/ide_setup.html#intellij-idea">Setting up IntelliJ</a> guide for details.</p>
+
+<h3 id="eclipse-scala-ide">Eclipse Scala IDE</h3>
+
+<p><strong>NOTE:</strong> From our experience, this setup does not work with Flink due to deficiencies of the old Eclipse version bundled with Scala IDE 3.0.3 or due to version incompatibilities with the bundled Scala version in Scala IDE 4.4.1.</p>
+
+<p><strong>We recommend to use IntelliJ instead (see above)</strong></p>
+
+<h2 id="support">Support</h2>
+
+<p>Don’t hesitate to ask!</p>
+
+<p>Contact the developers and community on the <a href="https://flink.apache.org/community.html#mailing-lists">mailing lists</a> if you need any help.</p>
+
+<p><a href="https://issues.apache.org/jira/browse/FLINK">Open an issue</a> if you found a bug in Flink.</p>
+
+<h2 id="documentation">Documentation</h2>
+
+<p>The documentation of Apache Flink is located on the website: <a href="https://flink.apache.org/">https://flink.apache.org</a> or in the <code>docs/</code> directory of the source code.</p>
+
+<h2 id="fork-and-contribute">Fork and Contribute</h2>
+
+<p>This is an active open-source project. We are always open to people who want to use the system or contribute to it. Contact us if you are looking for implementation tasks that fit your skills. This article describes <a href="https://flink.apache.org/contributing/how-to-contribute.html">how to contribute to Apache Flink</a>.</p>
+
+<h2 id="about">About</h2>
+
+<p>Apache Flink is an open source project of The Apache Software Foundation (ASF). The Apache Flink project originated from the <a href="http://stratosphere.eu/">Stratosphere</a> research project.</p>
+
     </div>
     <div class="post-footer">
       
